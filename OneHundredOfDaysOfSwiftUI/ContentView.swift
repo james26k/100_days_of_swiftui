@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let projects = Project.allCases
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List(projects.indices, id: \.self) { index in
+                Text("\(index + 1): \(projects[index].name)")
+            }
+            .navigationTitle("Project list")
+        }
+        .navigationViewStyle(StackNavigationViewStyle()) // for breaking constraint
     }
 }
 
