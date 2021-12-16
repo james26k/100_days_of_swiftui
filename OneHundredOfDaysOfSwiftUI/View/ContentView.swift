@@ -13,7 +13,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(projects.indices, id: \.self) { index in
-                Text("\(index + 1): \(projects[index].name)")
+                let project = projects[index]
+                NavigationLink("\(index + 1): \(project.name)",
+                               destination: project.view)
             }
             .navigationTitle("Project list")
         }
