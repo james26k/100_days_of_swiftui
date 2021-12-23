@@ -72,6 +72,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		55CD345C2774D36A00F0568F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55E30536276B8E2E0073D15A /* WeSplitView.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		55E3052E276B7B580073D15A /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				5589658F276B6431004A8734 /* ContentView.swift */,
-				55E30536276B8E2E0073D15A /* WeSplitView.swift */,
+				55CD345C2774D36A00F0568F /* Module */,
 			);
 			path = View;
 			sourceTree = "<group>";
