@@ -21,6 +21,11 @@ struct WeSplitView: View {
                           value: $checkAmount,
                           format: .currency(code: code))
                     .keyboardType(.decimalPad)
+                Picker("Number of people", selection: $numberOfPeople) {
+                    ForEach(2..<100) {
+                        Text("\($0) people")
+                    }
+                }
             }
             Section {
                 Text(checkAmount, format: .currency(code: code))
