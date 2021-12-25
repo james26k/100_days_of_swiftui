@@ -13,6 +13,15 @@ struct WeSplitView: View {
     @State private var numberOfPeople = 2
     @State private var tipPercentage = 20
 
+    private var totalPerPerson: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection = Double(tipPercentage)
+        let tipValue = checkAmount / 100 * tipSelection
+        let grandTotal = checkAmount + tipValue
+        let amountPerPerson = grandTotal / peopleCount
+        return amountPerPerson.isNaN ? 0 : amountPerPerson
+    }
+
     var body: some View {
         Form {
             let code = Locale.current.currencyCode ?? "USD"
@@ -38,7 +47,7 @@ struct WeSplitView: View {
                 Text("How much tip do you want to leave?")
             }
             Section {
-                Text(checkAmount, format: .currency(code: code))
+                Text(totalPerPerson, format: .currency(code: code))
             }
         }
     }
