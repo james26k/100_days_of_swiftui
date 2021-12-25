@@ -14,7 +14,18 @@ struct WeSplitView: View {
     @State private var tipPercentage = 20
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            let code = Locale.current.currencyCode ?? "USD"
+            Section {
+                TextField("Amount",
+                          value: $checkAmount,
+                          format: .currency(code: code))
+                    .keyboardType(.decimalPad)
+            }
+            Section {
+                Text(checkAmount, format: .currency(code: code))
+            }
+        }
     }
 }
 
