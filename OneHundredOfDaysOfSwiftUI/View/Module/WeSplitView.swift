@@ -50,6 +50,7 @@ struct WeSplitView: View {
                 Text(totalPerPerson, format: .currency(code: code))
             }
         }
+        .navigationTitle(Project.weSplit.name)
     }
 }
 
