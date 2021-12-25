@@ -34,6 +34,8 @@ struct WeSplitView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+            } header: {
+                Text("How much tip do you want to leave?")
             }
             Section {
                 Text(checkAmount, format: .currency(code: code))
