@@ -51,6 +51,7 @@ struct WeSplitView: View {
             }
         }
         .navigationTitle(Project.weSplit.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
