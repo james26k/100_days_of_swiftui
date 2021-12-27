@@ -72,12 +72,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		55CD345C2774D36A00F0568F /* Module */ = {
+		55CD345C2774D36A00F0568F /* ProjectView */ = {
 			isa = PBXGroup;
 			children = (
 				55E30536276B8E2E0073D15A /* WeSplitView.swift */,
 			);
-			path = Module;
+			path = ProjectView;
 			sourceTree = "<group>";
 		};
 		55E3052E276B7B580073D15A /* Constants */ = {
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				5589658F276B6431004A8734 /* ContentView.swift */,
-				55CD345C2774D36A00F0568F /* Module */,
+				55CD345C2774D36A00F0568F /* ProjectView */,
 			);
 			path = View;
 			sourceTree = "<group>";
