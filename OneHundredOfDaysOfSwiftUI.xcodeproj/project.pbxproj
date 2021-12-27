@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55091C63277A099900399763 /* GuessTheFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55091C62277A099900399763 /* GuessTheFlagView.swift */; };
 		5589658E276B6431004A8734 /* OneHundredOfDaysOfSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589658D276B6431004A8734 /* OneHundredOfDaysOfSwiftUIApp.swift */; };
 		55896590276B6431004A8734 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589658F276B6431004A8734 /* ContentView.swift */; };
 		55896592276B6433004A8734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55896591276B6433004A8734 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55091C62277A099900399763 /* GuessTheFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagView.swift; sourceTree = "<group>"; };
 		5589658A276B6431004A8734 /* OneHundredOfDaysOfSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneHundredOfDaysOfSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5589658D276B6431004A8734 /* OneHundredOfDaysOfSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneHundredOfDaysOfSwiftUIApp.swift; sourceTree = "<group>"; };
 		5589658F276B6431004A8734 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				55E30536276B8E2E0073D15A /* WeSplitView.swift */,
+				55091C62277A099900399763 /* GuessTheFlagView.swift */,
 			);
 			path = ProjectView;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				5589658E276B6431004A8734 /* OneHundredOfDaysOfSwiftUIApp.swift in Sources */,
 				55E30531276B7B7E0073D15A /* Project.swift in Sources */,
 				55E30537276B8E2E0073D15A /* WeSplitView.swift in Sources */,
+				55091C63277A099900399763 /* GuessTheFlagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

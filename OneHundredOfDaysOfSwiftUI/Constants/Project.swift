@@ -19,9 +19,12 @@ enum Project: CaseIterable {
     }
 
     var view: some View {
-        switch self {
-        case .weSplit: return WeSplitView()
-        case .guessTheFlag: fatalError("Unimplemented")
+        // NOTE: Opaque Result Typeに対応するためGroupでラップしている
+        Group {
+            switch self {
+            case .weSplit:      WeSplitView()
+            case .guessTheFlag: GuessTheFlagView()
+            }
         }
     }
 }
