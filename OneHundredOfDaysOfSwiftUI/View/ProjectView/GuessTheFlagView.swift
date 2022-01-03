@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GuessTheFlagView: View {
-    private var countries = [
+    @State private var countries = [
         "estonia",
         "france",
         "germany",
@@ -21,7 +21,9 @@ struct GuessTheFlagView: View {
         "uk",
         "us"
     ].shuffled()
-    private var correctAnswer = Int.random(in: 0...2)
+    @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var showingScore: Bool = false
+    @State private var scoreTitle: String = ""
 
     var body: some View {
         ZStack {
@@ -38,15 +40,27 @@ struct GuessTheFlagView: View {
 
                 ForEach(0..<3) { number in
                     Button {
-                        print("did tap button")
+                        flagTapped(number)
                     } label: {
                         Image(countries[number])
                             .renderingMode(.original)
                     }
                 }
             }
-
         }
+        .alert(scoreTitle, isPresented: $showingScore) {
+            Button("Continue") {}
+        } message: {
+            Text("Your score is ???")
+        }
+    }
+
+    private func flagTapped(_ number: Int) {
+        scoreTitle = number == correctAnswer
+        ? "Correct"
+        : "Wrong"
+
+        showingScore = true
     }
 }
 
