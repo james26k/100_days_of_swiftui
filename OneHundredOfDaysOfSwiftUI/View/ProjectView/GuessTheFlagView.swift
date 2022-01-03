@@ -49,7 +49,7 @@ struct GuessTheFlagView: View {
             }
         }
         .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue") {}
+            Button("Continue", action: askQuestion)
         } message: {
             Text("Your score is ???")
         }
@@ -61,6 +61,11 @@ struct GuessTheFlagView: View {
         : "Wrong"
 
         showingScore = true
+    }
+
+    private func askQuestion() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
     }
 }
 
