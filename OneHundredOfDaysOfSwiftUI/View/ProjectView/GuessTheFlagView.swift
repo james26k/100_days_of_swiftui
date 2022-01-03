@@ -18,8 +18,8 @@ struct GuessTheFlagView: View {
         "poland",
         "russia",
         "spain",
-        "uK",
-        "uS"
+        "uk",
+        "us"
     ].shuffled()
     private var correctAnswer = Int.random(in: 0...2)
 
