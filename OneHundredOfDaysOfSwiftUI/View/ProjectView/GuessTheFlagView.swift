@@ -8,8 +8,45 @@
 import SwiftUI
 
 struct GuessTheFlagView: View {
+    private var countries = [
+        "estonia",
+        "france",
+        "germany",
+        "ireland",
+        "italy",
+        "nigeria",
+        "poland",
+        "russia",
+        "spain",
+        "uK",
+        "uS"
+    ].shuffled()
+    private var correctAnswer = Int.random(in: 0...2)
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.blue
+                .ignoresSafeArea()
+
+            VStack {
+                VStack {
+                    Text("Tap the flag of")
+                        .foregroundColor(.white)
+                    Text(countries[correctAnswer])
+                        .foregroundColor(.white)
+                }
+
+                ForEach(0..<3) { number in
+                    Button {
+                        print("did tap button")
+                    } label: {
+                        Image(countries[number])
+                            .renderingMode(.original)
+                    }
+                }
+            }
+
+        }
     }
 }
 
