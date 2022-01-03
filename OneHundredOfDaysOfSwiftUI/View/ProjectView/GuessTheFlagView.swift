@@ -41,6 +41,8 @@ struct GuessTheFlagView: View {
                 .ignoresSafeArea()
 
             VStack {
+                Spacer()
+
                 Text("Guess the Flag")
                     .font(.largeTitle.bold())
                     .foregroundColor(.white)
@@ -48,10 +50,9 @@ struct GuessTheFlagView: View {
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
-                            .foregroundColor(.white)
+                            .foregroundColor(.secondary)
                             .font(.subheadline.weight(.heavy))
                         Text(countries[correctAnswer])
-                            .foregroundColor(.white)
                             .font(.largeTitle.weight(.semibold))
                     }
 
@@ -71,16 +72,23 @@ struct GuessTheFlagView: View {
                 .background(.regularMaterial)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
 
+                Spacer()
+                Spacer()
+
                 Text("Score: ???")
                     .foregroundColor(.white)
                     .font(.title.bold())
+
+                Spacer()
             }
+            .padding()
         }
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
             Text("Your score is ???")
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private func flagTapped(_ number: Int) {
