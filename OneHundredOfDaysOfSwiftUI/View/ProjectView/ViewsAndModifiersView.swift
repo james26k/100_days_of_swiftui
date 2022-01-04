@@ -19,6 +19,9 @@ struct ViewsAndModifiersView: View {
             Color.blue
                 .frame(width: 300, height: 200)
                 .watermarked(with: "Hacking with Swift")
+
+            Text("Large blue title")
+                .largeBlueTitleStyle()
         }
         .navigationTitle(Project.viewsAndModifiers.name)
         .navigationBarTitleDisplayMode(.inline)
