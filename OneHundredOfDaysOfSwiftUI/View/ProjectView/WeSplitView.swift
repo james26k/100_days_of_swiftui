@@ -51,6 +51,7 @@ struct WeSplitView: View {
             }
             Section {
                 Text(totalPerPerson, format: .currency(code: code))
+                    .foregroundColor(tipPercentage == 0 ? .red : .primary)
             }
         }
         .navigationTitle(Project.weSplit.name)
