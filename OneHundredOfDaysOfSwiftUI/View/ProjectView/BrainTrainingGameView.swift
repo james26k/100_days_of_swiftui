@@ -11,6 +11,22 @@ private enum Move: String, CaseIterable {
     case rock     = "✊"
     case paper    = "✋"
     case scissors = "✌️"
+
+    var isWinMove: Self {
+        switch self {
+        case .rock:     return .paper
+        case .paper:    return .scissors
+        case .scissors: return .rock
+        }
+    }
+
+    var isLoseMove: Self {
+        switch self {
+        case .rock:     return .scissors
+        case .paper:    return .rock
+        case .scissors: return .paper
+        }
+    }
 }
 
 struct BrainTrainingGameView: View {
@@ -19,7 +35,14 @@ struct BrainTrainingGameView: View {
     @State private var shouldWin = Bool.random()
 
     @State private var playersScore = 0
-    @State private var matchCount = 0
+    @State private var matchCount = 0 {
+        didSet {
+            // NOTE: 勝負判定は10回
+            if matchCount == 10 {
+                showingScoreAlert = true
+            }
+        }
+    }
     @State private var showingScoreAlert = false
 
     var body: some View {
@@ -32,12 +55,39 @@ struct BrainTrainingGameView: View {
 
             HStack(spacing: 50) {
                 ForEach(allMoves, id: \.self) {
-                    MoveButton(move: $0)
+                    MoveButton(move: $0,
+                               didTapButton: { move in
+                        self.playersScore += judgeScore(playersMove: move)
+                        self.matchCount += 1
+                        self.updateQuestion()
+                    })
                 }
             }
         }
+        .alert("You're score is \(playersScore)",
+               isPresented: $showingScoreAlert) {
+            Button("Reset", action: resetGame)
+        }
         .navigationTitle(Project.brainTrainingGame.name)
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func judgeScore(playersMove: Move) -> Int{
+        let currentAppsMove = allMoves[appsMove]
+        let correctMove = shouldWin
+        ? currentAppsMove.isWinMove
+        : currentAppsMove.isLoseMove
+        return correctMove == playersMove ? 1 : -1
+    }
+
+    private func updateQuestion() {
+        appsMove = Int.random(in: 0..<3)
+        shouldWin.toggle()
+    }
+
+    private func resetGame() {
+        playersScore = 0
+        matchCount = 0
     }
 }
 // MARK: - custom struct
