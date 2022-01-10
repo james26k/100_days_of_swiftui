@@ -67,6 +67,12 @@ struct BrainTrainingGameView: View {
         .alert("You're score is \(playersScore)",
                isPresented: $showingScoreAlert) {
             Button("Reset", action: resetGame)
+        } message: {
+            if let review = getScoreReview(score: playersScore) {
+                Text(review)
+            } else {
+                EmptyView()
+            }
         }
         .navigationTitle(Project.brainTrainingGame.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -88,6 +94,18 @@ struct BrainTrainingGameView: View {
     private func resetGame() {
         playersScore = 0
         matchCount = 0
+    }
+
+    private func getScoreReview(score: Int) -> String? {
+        let badScoreRange: Range<Int> = -10..<4
+        let goodScoreRange: Range<Int> = 4..<8
+        let greatScoreRange: Range<Int> = Range(8...10) // '...' はClosedRange Type
+        switch score {
+        case badScoreRange:   return "Bad score"
+        case goodScoreRange:  return "Good score"
+        case greatScoreRange: return "Great score"
+        default:              return nil
+        }
     }
 }
 // MARK: - custom struct
