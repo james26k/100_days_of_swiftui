@@ -12,6 +12,7 @@ enum Project: CaseIterable {
     case guessTheFlag
     case viewsAndModifiers
     case brainTrainingGame
+    case betterRest
 
     var name: String {
         switch self {
@@ -19,6 +20,7 @@ enum Project: CaseIterable {
         case .guessTheFlag:      return "Guess the flag"
         case .viewsAndModifiers: return "Views and Modifiers"
         case .brainTrainingGame: return "brain training game"
+        case .betterRest:        return "Better rest"
         }
     }
 
@@ -30,6 +32,7 @@ enum Project: CaseIterable {
             case .guessTheFlag:      GuessTheFlagView()
             case .viewsAndModifiers: ViewsAndModifiersView()
             case .brainTrainingGame: BrainTrainingGameView()
+            case .betterRest:        BetterRestView()
             }
         }
     }
