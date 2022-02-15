@@ -39,6 +39,16 @@ struct BetterRestView: View {
         }
         .navigationTitle(Project.betterRest.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button("Calculate", action: calculateBedtime)
+        }
+    }
+}
+
+fileprivate extension BetterRestView {
+    func calculateBedtime() {
+        // TODO: implement action
+        print("did tap calculate button")
     }
 }
 
