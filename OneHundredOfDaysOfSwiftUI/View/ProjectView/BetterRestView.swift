@@ -44,6 +44,8 @@ struct BetterRestView: View {
 
 struct BetterRestView_Previews: PreviewProvider {
     static var previews: some View {
-        BetterRestView()
+        NavigationView {
+            BetterRestView()
+        }
     }
 }
