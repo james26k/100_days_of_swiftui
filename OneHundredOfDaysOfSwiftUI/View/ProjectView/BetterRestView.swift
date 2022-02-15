@@ -37,6 +37,8 @@ struct BetterRestView: View {
                     value: $coffeeAmount,
                     in: 1...20)
         }
+        .navigationTitle(Project.betterRest.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
