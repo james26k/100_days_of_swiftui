@@ -14,6 +14,7 @@
 		55896590276B6431004A8734 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5589658F276B6431004A8734 /* ContentView.swift */; };
 		55896592276B6433004A8734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55896591276B6433004A8734 /* Assets.xcassets */; };
 		55896595276B6433004A8734 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55896594276B6433004A8734 /* Preview Assets.xcassets */; };
+		55BA5E6C27BC0163007C91E6 /* BetterRest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55BA5E6B27BC0163007C91E6 /* BetterRest.mlmodel */; };
 		55D41742278D98EB00A6B752 /* BetterRestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D41741278D98EA00A6B752 /* BetterRestView.swift */; };
 		55D60C292785DF35007D1180 /* BrainTrainingGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D60C282785DF35007D1180 /* BrainTrainingGameView.swift */; };
 		55E30531276B7B7E0073D15A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30530276B7B7E0073D15A /* Project.swift */; };
@@ -29,6 +30,7 @@
 		5589658F276B6431004A8734 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55896591276B6433004A8734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55896594276B6433004A8734 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55BA5E6B27BC0163007C91E6 /* BetterRest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BetterRest.mlmodel; sourceTree = "<group>"; };
 		55D41741278D98EA00A6B752 /* BetterRestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRestView.swift; sourceTree = "<group>"; };
 		55D60C282785DF35007D1180 /* BrainTrainingGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainTrainingGameView.swift; sourceTree = "<group>"; };
 		55E30530276B7B7E0073D15A /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		5589658C276B6431004A8734 /* OneHundredOfDaysOfSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				55BA5E6727BC0100007C91E6 /* CoreML */,
 				553218792784949600F31460 /* ViewModifier */,
 				55E30538276B8E560073D15A /* View */,
 				55E3052E276B7B580073D15A /* Constants */,
@@ -89,6 +92,22 @@
 				55896594276B6433004A8734 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55BA5E6727BC0100007C91E6 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				55BA5E6827BC0121007C91E6 /* Model */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
+		55BA5E6827BC0121007C91E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55BA5E6B27BC0163007C91E6 /* BetterRest.mlmodel */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		55CD345C2774D36A00F0568F /* ProjectView */ = {
@@ -198,6 +217,7 @@
 				55E30537276B8E2E0073D15A /* WeSplitView.swift in Sources */,
 				55321878278459E400F31460 /* ViewsAndModifiersView.swift in Sources */,
 				5532187B2784953E00F31460 /* LargeBlueTitle.swift in Sources */,
+				55BA5E6C27BC0163007C91E6 /* BetterRest.mlmodel in Sources */,
 				55091C63277A099900399763 /* GuessTheFlagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
