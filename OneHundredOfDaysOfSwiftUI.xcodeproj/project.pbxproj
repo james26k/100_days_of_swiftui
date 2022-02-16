@@ -19,6 +19,7 @@
 		55D60C292785DF35007D1180 /* BrainTrainingGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D60C282785DF35007D1180 /* BrainTrainingGameView.swift */; };
 		55E30531276B7B7E0073D15A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30530276B7B7E0073D15A /* Project.swift */; };
 		55E30537276B8E2E0073D15A /* WeSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30536276B8E2E0073D15A /* WeSplitView.swift */; };
+		55F4758727BD60C900E65E89 /* BetterRestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4758627BD60C900E65E89 /* BetterRestViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		55D60C282785DF35007D1180 /* BrainTrainingGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainTrainingGameView.swift; sourceTree = "<group>"; };
 		55E30530276B7B7E0073D15A /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		55E30536276B8E2E0073D15A /* WeSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplitView.swift; sourceTree = "<group>"; };
+		55F4758627BD60C900E65E89 /* BetterRestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRestViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +115,11 @@
 		55CD345C2774D36A00F0568F /* ProjectView */ = {
 			isa = PBXGroup;
 			children = (
+				55F4758527BD60AD00E65E89 /* BetterRest */,
 				55E30536276B8E2E0073D15A /* WeSplitView.swift */,
 				55091C62277A099900399763 /* GuessTheFlagView.swift */,
 				55321877278459E300F31460 /* ViewsAndModifiersView.swift */,
 				55D60C282785DF35007D1180 /* BrainTrainingGameView.swift */,
-				55D41741278D98EA00A6B752 /* BetterRestView.swift */,
 			);
 			path = ProjectView;
 			sourceTree = "<group>";
@@ -137,6 +139,15 @@
 				55CD345C2774D36A00F0568F /* ProjectView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		55F4758527BD60AD00E65E89 /* BetterRest */ = {
+			isa = PBXGroup;
+			children = (
+				55D41741278D98EA00A6B752 /* BetterRestView.swift */,
+				55F4758627BD60C900E65E89 /* BetterRestViewModel.swift */,
+			);
+			path = BetterRest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				55896590276B6431004A8734 /* ContentView.swift in Sources */,
 				5589658E276B6431004A8734 /* OneHundredOfDaysOfSwiftUIApp.swift in Sources */,
 				55D41742278D98EB00A6B752 /* BetterRestView.swift in Sources */,
+				55F4758727BD60C900E65E89 /* BetterRestViewModel.swift in Sources */,
 				55E30531276B7B7E0073D15A /* Project.swift in Sources */,
 				55D60C292785DF35007D1180 /* BrainTrainingGameView.swift in Sources */,
 				55E30537276B8E2E0073D15A /* WeSplitView.swift in Sources */,
