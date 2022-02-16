@@ -9,13 +9,20 @@ import CoreML
 import SwiftUI
 
 struct BetterRestView: View {
-    @State private var wakeUp = Date.now
+    @State private var wakeUp = Self.defaultWakeUpTime
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
 
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+
+    private static var defaultWakeUpTime: Date {
+        var dateComponents = DateComponents()
+        dateComponents.hour = 7
+        dateComponents.minute = 0
+        return Calendar.current.date(from: dateComponents) ?? Date.now
+    }
 
     var body: some View {
         VStack {
