@@ -26,7 +26,7 @@ struct BetterRestView: View {
 
     var body: some View {
         Form {
-            VStack(alignment: .leading, spacing: 5) {
+            makeRow {
                 Text("When do you want to wake up?")
                     .font(.headline)
 
@@ -36,7 +36,7 @@ struct BetterRestView: View {
                     .labelsHidden()
             }
 
-            VStack(alignment: .leading, spacing: 5) {
+            makeRow {
                 Text("Desired amount of sleep")
                     .font(.headline)
 
@@ -46,7 +46,7 @@ struct BetterRestView: View {
                         step: 0.25)
             }
 
-            VStack(alignment: .leading, spacing: 5) {
+            makeRow {
                 Text("Daily coffee intake")
                     .font(.headline)
 
@@ -89,6 +89,12 @@ fileprivate extension BetterRestView {
             alertMessage = "Sorry, there was a problem calculating your bedtime."
         }
         showingAlert = true
+    }
+
+    func makeRow<Row: View>(@ViewBuilder row: () -> Row) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            row()
+        }
     }
 }
 
