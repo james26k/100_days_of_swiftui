@@ -57,7 +57,7 @@ struct BetterRestView: View {
 
 fileprivate extension BetterRestView {
     func makeRow<Row: View>(@ViewBuilder row: () -> Row) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
+        Section {
             row()
         }
     }
