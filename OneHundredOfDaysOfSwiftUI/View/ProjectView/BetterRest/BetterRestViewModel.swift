@@ -10,13 +10,6 @@ import CoreML
 import Foundation
 
 final class BetterRestViewModel: ObservableObject {
-    private static var defaultWakeUpTime: Date {
-        var dateComponents = DateComponents()
-        dateComponents.hour = 7
-        dateComponents.minute = 0
-        return Calendar.current.date(from: dateComponents) ?? Date.now
-    }
-
     @Published var wakeUp = defaultWakeUpTime
     @Published var sleepAmount = 8.0
     @Published var coffeeAmount = 1
@@ -24,6 +17,13 @@ final class BetterRestViewModel: ObservableObject {
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     @Published var showingAlert = false
+
+    private static var defaultWakeUpTime: Date {
+        var dateComponents = DateComponents()
+        dateComponents.hour = 7
+        dateComponents.minute = 0
+        return Calendar.current.date(from: dateComponents) ?? Date.now
+    }
 
     func calculateBedtime() {
         do {
