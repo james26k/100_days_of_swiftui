@@ -36,10 +36,13 @@ struct BetterRestView: View {
                 Text("Daily coffee intake")
                     .font(.headline)
 
-                Stepper(viewModel.coffeeAmount == 1 ? "1 cup" : "\(viewModel.coffeeAmount) cups",
-                        value: $viewModel.coffeeAmount,
-                        in: 1...20)
-
+                Picker(viewModel.coffeeAmount == 1
+                       ? "1 cup"
+                       : "\(viewModel.coffeeAmount) cups", selection: $viewModel.coffeeAmount) {
+                    ForEach(1..<21) {
+                        Text("\($0)").tag($0)
+                    }
+                }
             }
         }
         .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
