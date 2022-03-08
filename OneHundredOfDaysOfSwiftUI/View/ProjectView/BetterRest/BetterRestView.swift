@@ -44,6 +44,15 @@ struct BetterRestView: View {
                     }
                 }
             }
+
+            makeRow {
+                HStack {
+                    Text("Your ideal bedtime is…")
+                    Spacer()
+                    Text(viewModel.betterRestTime
+                            .formatted(date: .omitted, time: .shortened))
+                }
+            }
         }
         .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
             Button("OK") {}
@@ -52,9 +61,9 @@ struct BetterRestView: View {
         }
         .navigationTitle(Project.betterRest.name)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            Button("Calculate", action: viewModel.calculateBedtime)
-        }
+//        .toolbar {
+//            Button("Calculate", action: viewModel.calculateBedtime)
+//        }
     }
 }
 

@@ -17,12 +17,26 @@ final class BetterRestViewModel: ObservableObject {
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     @Published var showingAlert = false
+    @Published var betterRestTime = defaultWakeUpTime
+
+    private var cancellables = Set<AnyCancellable>()
 
     private static var defaultWakeUpTime: Date {
         var dateComponents = DateComponents()
         dateComponents.hour = 7
         dateComponents.minute = 0
         return Calendar.current.date(from: dateComponents) ?? Date.now
+    }
+
+    init() {
+        Publishers.CombineLatest3($wakeUp,
+                                  $sleepAmount,
+                                  $coffeeAmount)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { [weak self] _ in
+                self?.calculateBedtime()
+            })
+            .store(in: &cancellables)
     }
 
     func calculateBedtime() {
@@ -37,12 +51,14 @@ final class BetterRestViewModel: ObservableObject {
                                                   coffee: Double(coffeeAmount))
             let sleepTime = wakeUp - prediction.actualSleep
 
-            alertTitle = "Your ideal bedtime is…"
-            alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+//            alertTitle = "Your ideal bedtime is…"
+//            alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+            betterRestTime = sleepTime
         } catch {
             alertTitle = "Error"
             alertMessage = "Sorry, there was a problem calculating your bedtime."
+            showingAlert = true
         }
-        showingAlert = true
+//        showingAlert = true
     }
 }
